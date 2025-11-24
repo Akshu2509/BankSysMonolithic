@@ -1,0 +1,13 @@
+package com.example.demo.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import com.example.demo.model.Account;
+import java.util.Optional;
+
+public interface AccountRepository extends MongoRepository<Account, String> {
+
+    Optional<Account> findByAccountNumber(String accountNumber);
+
+    boolean existsByAccountNumber(String accountNumber);
+}
+
